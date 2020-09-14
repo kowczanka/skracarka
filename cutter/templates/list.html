@@ -6,6 +6,14 @@
 </head>
 <body>
     <h1>Skracarka linków</h1>
-    <code> {{ short_link }}</code>
+    <ul>
+    {% for link in links %}
+        <li>
+            Odwiedzony {{ link.count }} razy:
+            <a href ="http://localhost:8000/{{link.id}}/"> {{link.target }}
+            ostatnio: {{ link.last_visited }}</a>
+        </li>
+    {% endfor %}
+    </ul>
 </body>
 </html>
